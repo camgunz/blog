@@ -1,0 +1,138 @@
+a {
+    color: #3B5AA3;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: #FFFF00;
+}
+
+pre {
+    overflow: auto;
+    border: 1px solid #DFDFDF;
+    margin: 3px;
+    padding: 3px;
+    color: #090909;
+    background-color: #EFFDFF;
+}
+
+body {
+    color: black;
+    background-color: #239E46;
+    font-family: sans-serif;
+}
+
+a#title_link, a#title_link:visited {
+    padding: 3px;
+    color: #FFFF00;
+    background-color: #239E46;
+}
+
+a#title_link:hover {
+    background-color: #3B5AA3;
+}
+
+a#post_header, a#post_header:visited {
+    color: #3B5AA3;
+    background-color: white;
+    padding: 3px;
+}
+
+a#post_header:hover {
+    background-color: #FFFF00;
+}
+
+div#post h3, div#post h4, div#post h5, div#post h6 {
+    border-left: 6px solid #00822B;
+    padding-left: 4px;
+    /* color: #00822B; */
+}
+
+div#content {
+    min-width: 1000px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div#post, div#sidebar {
+    display: inline-block;
+    background-color: white;
+    padding: 8px;
+    border: 1px solid #AC0;
+    margin-bottom: 8px;
+}
+
+div#post {
+    max-width: 700px;
+    min-width: 560px;
+    padding-top: 0px;
+    padding-bottom: 12px;
+}
+
+div#sidebar {
+    max-width: 240px;
+    min-width: 220px;
+    font-size: .8em;
+    font-weight: bold;
+    vertical-align: top;
+}
+
+div.post_selector {
+    color: #3B5AA3;
+    background-color: white;
+    padding: 2px;
+    border-left: 6px solid white;
+}
+
+div.post_selector:hover {
+    cursor: pointer;
+    background-color: #FFFF00;
+}
+
+/*
+ * Green:        #239E46
+ * Blue:         #3B5AA3
+ * White:        #FFFFFF
+ * Yellow:       #FFFF00
+ * Pale Yellow:  #F7F409
+ * Light Yellow: #EFEFAF
+ * Dark Green:   #00822B
+ * Darker Green: #003620
+ * Dark Blue:    #233152
+ */
+
+div.current_post {
+    border-left: 6px solid #FFFF00;
+}
+
+div.current_post:hover {
+    cursor: default;
+    background-color: white;
+}
+
+div#newer_posts, div#older_posts {
+    text-align: center;
+    cursor: pointer;
+    color: white;
+    background-color: #3B5AA3;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+div#newer_posts:hover, div#older_posts:hover {
+    color: #3B5AA3;
+    background-color: #FFFF00;
+}
+
+div#newer_posts {
+    margin-bottom: 3px;
+}
+
+div#older_posts {
+    /*
+    border-top: 3px solid #239E46;
+    */
+    margin-top: 3px;
+}
+
