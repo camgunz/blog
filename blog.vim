@@ -9,6 +9,7 @@ from __future__ import with_statement
 import vim, json, urllib, httplib, datetime, urlparse, contextlib
 
 BLOG_HOSTNAME = 'www.superblog.net'
+BLOG_PORT = 80
 BLOG_URL = 'http://www.superblog.net'
 BLOG_USERNAME = 'superuser'
 BLOG_PASSWORD = 'superpassword'
@@ -28,21 +29,18 @@ def encode(things):
 
 class KyotoTycoon(object):
 
-    def __init__(self):
-        self.base_url = '/'.join((BLOG_URL, 'rpc'))
-
     @contextlib.contextmanager
     def connection(self):
         try:
             conn = httplib.HTTPConnection(
-                BLOG_HOSTNAME, 80, False, BLOG_TIMEOUT
+                BLOG_HOSTNAME, BLOG_PORT, False, BLOG_TIMEOUT
             )
             yield conn
         finally:
             conn.close()
 
     def send_request(self, rpc_method, data):
-        url = '/'.join((self.base_url, rpc_method))
+        url = '/'.join((BLOG_URL, 'rpc', rpc_method))
         auth_header = ':'.join((
             BLOG_USERNAME, BLOG_PASSWORD
         )).encode('base64').rstrip()
@@ -129,7 +127,7 @@ def load_buffer(dt=None, poster='', title='', body=None):
     vim.command('set encoding=utf8')
     vim.command('set nomodified')
     vim.command('set textwidth=' + str(BLOG_TEXTWIDTH))
-    vim.command('set syntax=mkd')
+    vim.command('set syntax=markdown')
 
 def new_post():
     global POST_ID
